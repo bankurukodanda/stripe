@@ -45,14 +45,16 @@
                 })
                 
                 $("body").click(function(e){ 
-                    if(e.target.classList.contains("mobile-nav-icon")){
-                        $("#menu-bar").show();
-                        $(".mobile-nav-close-icon").show();
-                        $(".mobile-nav-icon").hide();
-                    } else if(!e.target.classList.contains("menu")){
-                        $('#menu-bar').hide();
-                        $(".mobile-nav-close-icon").hide();
-                        $(".mobile-nav-icon").show();
+                    if($(document).width() <= 767){
+                        if(e.target.classList.contains("mobile-nav-icon")){
+                            $("#menu-bar").show();
+                            $(".mobile-nav-close-icon").show();
+                            $(".mobile-nav-icon").hide();
+                        } else if(!e.target.classList.contains("menu")){
+                            $('#menu-bar').hide();
+                            $(".mobile-nav-close-icon").hide();
+                            $(".mobile-nav-icon").show();
+                        }
                     }
                 });
                 $(".mobile-nav-icon").click(function(e){
